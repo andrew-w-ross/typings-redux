@@ -1,5 +1,5 @@
-/// <reference path="redux.d.ts" />
-import { createStore, applyMiddleware, IMiddlewareStoreGeneric, IActionGeneric, IDispatch } from 'redux';
+/// <reference path="../redux.d.ts" />
+import { createStore, applyMiddleware, IMiddlewareStore, IActionGeneric, IDispatch } from 'redux';
 
 function todosReducer(state : string[] = [], action:IActionGeneric<string>) {
   switch (action.type) {
@@ -10,10 +10,9 @@ function todosReducer(state : string[] = [], action:IActionGeneric<string>) {
   }
 }
 
-//This is just a demonstration of how typing for middleware would go. It's up to you
-//How to go about this if you want but this is an option for people who generally like
-//Typing wherever possible 
-function logger({ getState  }:IMiddlewareStoreGeneric<string[]>) {
+//This is just a demonstration of how typing for middleware would go. 
+function logger({ getState  }:IMiddlewareStore<string[]>) {
+ //Unfortunately it seems as if you always have to type params
   return (next : IDispatch) => (action : IActionGeneric<string>) => {
 	  
     console.log(`The action type is ${action.type}`);
@@ -31,7 +30,7 @@ function logger({ getState  }:IMiddlewareStoreGeneric<string[]>) {
   }
 }
 
-let createStoreWithMiddleware = applyMiddleware<string[]>(logger)(createStore)
+let createStoreWithMiddleware = applyMiddleware(logger)(createStore);
 let store = createStoreWithMiddleware(todosReducer, [ 'Use Redux' ])
 
 //suppressExcessPropertyErrors needs to be turned on

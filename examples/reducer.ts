@@ -1,3 +1,4 @@
+/// <reference path="../redux.d.ts" />
 import { combineReducers, createStore } from 'redux'
 
 function todosReducer(state = [], action) {

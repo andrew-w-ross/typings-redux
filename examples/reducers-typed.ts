@@ -1,3 +1,4 @@
+/// <reference path="../redux.d.ts" />
 import { combineReducers, createStore, IActionGeneric, IAction } from 'redux'
 
 interface IState {

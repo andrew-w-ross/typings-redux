@@ -1,4 +1,4 @@
-/// <reference path="redux.d.ts" />
+/// <reference path="../redux.d.ts" />
 import { createStore, IActionGeneric} from 'redux'
 
 function todoReducer(state:string[], action:IActionGeneric<string>){
@@ -18,7 +18,7 @@ function capsTodoReducer(state:string[], action:IActionGeneric<string>){
 }
 
 
-let store = createStore<string[]>(todoReducer, [ 'Use Redux' ])
+let store = createStore(todoReducer, [ 'Use Redux' ])
 
 function addTodo(text) : IActionGeneric<string> {
   return {

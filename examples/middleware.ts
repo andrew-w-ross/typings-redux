@@ -1,4 +1,4 @@
-/// <reference path="redux.d.ts" />
+/// <reference path="../redux.d.ts" />
 import { createStore, applyMiddleware } from 'redux';
 
 function todosReducer(state = [], action) {

@@ -1,9 +1,19 @@
 #Typings-Redux
 
 This is typings for quite possibly the best flux implementation [redux](https://github.com/rackt/redux).
-These typings come in two varients, a generic and non generic version. The non generic version will
-ensure that the correct 'shape' is met when calling the redux functions but the generic version will do a best attempt
-at type safety. Have a look at the following generic example.
+
+This type definition has two goals in mind
+- is to allow valid redux code written in javascript to work with these definitions with minimal modification
+- to keep as much type information as possible when possible
+
+Whilst the [current definitions](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/redux/redux.d.ts) solve the former goal a much
+better job can be done with the latter. 
+
+If you are moving from javascript it's a good idea to add the `suppressExcessPropertyErrors` compiler option
+as actions tend to have extra fields that aren't defined. Consider refactoring or extending the IAction type as the
+`suppressExcessPropertyErrors`  option catch quite a few errors.
+
+The current type 
 
 ```javascript
 import { createStore} from 'redux'

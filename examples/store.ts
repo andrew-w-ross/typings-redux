@@ -1,4 +1,4 @@
-/// <reference path="redux.d.ts" />
+/// <reference path="../redux.d.ts" />
 import { createStore} from 'redux'
 
 function todoReducer(state, action){
