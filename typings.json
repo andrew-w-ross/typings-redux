@@ -1,5 +1,6 @@
 {
   "name":"redux",
-  "dependencies": {},
-  "devDependencies": {}
+  "ambient":true,
+  "author":"Andrew Ross",
+  "main":"redux.d.ts"
 }
