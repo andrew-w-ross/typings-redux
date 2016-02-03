@@ -10,10 +10,6 @@ declare module redux {
 		meta?: any;
 	}
 
-	export interface IActionCreator {
-		(...args: any[]): IAction
-	}
-	
 	export interface IReducer<TState> {
 		(state: TState, action: IAction): TState;
 	}
@@ -21,7 +17,7 @@ declare module redux {
 	export interface IReducerMap {
 		[key: string]: IReducerMap | IReducer<any>
 	}
-	
+
 	export interface IDispatch {
 		(action: IAction): IAction;
 	}
@@ -50,19 +46,17 @@ declare module redux {
 		(createStore: ICreateStoreGeneric<TState>): ICreateStoreGeneric<TState>;
 	}
 
-	export function createStore<TState>(reducer: IReducer<TState>, initialState?: TState): IStore<TState>;	
+	export function createStore<TState>(reducer: IReducer<TState>, initialState?: TState): IStore<TState>;
 
 	export function combineReducers(reducers: IReducerMap): IReducer<any>;
-	export function combineReducers<TState>(reducers: IReducerMap): IReducer<TState>;	
-	
+	export function combineReducers<TState>(reducers: IReducerMap): IReducer<TState>;
+
 	export function applyMiddleware<TState>(...middlewares: IMiddleware<TState>[]): IStoreEnhancerGeneric<TState>;
 
-	export function bindActionCreators<TActionCreator extends IActionCreator | { [key: string]: IActionCreator }>(actionCreators: TActionCreator, dispatch: IDispatch): TActionCreator;
+	export function bindActionCreators<TActionCreator extends Function | { [key: string]: Function }>(actionCreators: TActionCreator, dispatch: IDispatch): TActionCreator;
 
 	export function compose<TArg>(...functions: { (arg: TArg): TArg }[]): (arg: TArg) => TArg;
 	export function compose(...functions: { (arg: any): any }[]): (arg: any) => any;
 }
 
-declare module "redux" {
-	export = redux;
-}
+export = redux;

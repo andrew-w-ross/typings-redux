@@ -6,7 +6,7 @@ interface IState {
 	counter: number;
 }
 
-function todosReducer(state : string[] = [], action : IActionGeneric<string>) {
+function todosReducer(state: string[] = [], action: IActionGeneric<string>) {
 	switch (action.type) {
 		case 'ADD_TODO':
 			return state.concat([action.payload])
@@ -15,7 +15,7 @@ function todosReducer(state : string[] = [], action : IActionGeneric<string>) {
 	}
 }
 
-function counterReducer(state : number = 0, action: IAction) {
+function counterReducer(state: number = 0, action: IAction) {
 	switch (action.type) {
 		case 'INCREMENT':
 			return state + 1;
@@ -26,9 +26,9 @@ function counterReducer(state : number = 0, action: IAction) {
 	}
 }
 
-const rootReducer = combineReducers<IState>({ todos:todosReducer, counter:counterReducer });
+const rootReducer = combineReducers<IState>({ todos: todosReducer, counter: counterReducer });
 const store = createStore(rootReducer);
 
-store.dispatch({type:"INCREMENT"});
+store.dispatch({ type: "INCREMENT" });
 //You will know what counter and todos is
 let {counter, todos} = store.getState();

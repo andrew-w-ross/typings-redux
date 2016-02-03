@@ -1,6 +1,6 @@
 {
   "name":"redux",
-  "ambient":true,
+  "ambient":false,
   "author":"Andrew Ross",
   "main":"redux.d.ts"
 }
