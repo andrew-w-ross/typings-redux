@@ -49,15 +49,3 @@ This has the same safety as the above plus the added safety of state.
 Trying to make an inital value a number in this case won't compile. Also not the usage of an IActionGeneric,
 this is a interface that somewhat followes the [flux-standard-action](https://github.com/acdlite/flux-standard-action) but disagrees with the error field being a flag.
 You can add your own actions interfaces or extend the IAction interface by using decleration merging on the `redux` namespace.
-
-Lets say for example all actions in your app must have an id to help with tracking and could optionally have a description.
-```javascript
-//In a seperate d.ts file
-/// <reference path="redux.d.ts" />
-declare module redux {
-	interface IAction {
-		id : number;
-		description?: string;
-	}
-}
-```
