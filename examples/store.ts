@@ -1,5 +1,5 @@
 /// <reference path="../redux.d.ts" />
-import { createStore} from 'redux'
+import { createStore} from '../redux'
 
 function todoReducer(state, action) {
 	switch (action.type) {

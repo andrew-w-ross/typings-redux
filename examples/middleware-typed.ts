@@ -1,5 +1,5 @@
 /// <reference path="../redux.d.ts" />
-import { createStore, applyMiddleware, IMiddlewareStore, IActionGeneric, IDispatch } from 'redux';
+import { createStore, applyMiddleware, IMiddlewareStore, IActionGeneric, IDispatch } from '../redux';
 
 function todosReducer(state: string[] = [], action: IActionGeneric<string>) {
 	switch (action.type) {

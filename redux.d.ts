@@ -1,7 +1,7 @@
 declare module redux {
 	//This should be extended
 	export interface IAction {
-		type: string | number | Symbol;
+		type: string | number;
 	}
 
 	export interface IActionGeneric<TPayload> extends IAction {

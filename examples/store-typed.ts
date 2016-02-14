@@ -1,5 +1,5 @@
 /// <reference path="../redux.d.ts" />
-import { createStore, IActionGeneric} from 'redux'
+import { createStore, IActionGeneric} from '../redux'
 
 function todoReducer(state: string[], action: IActionGeneric<string>) {
 	switch (action.type) {

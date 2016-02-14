@@ -1,5 +1,5 @@
 /// <reference path="../redux.d.ts" />
-import { combineReducers, createStore } from 'redux'
+import { combineReducers, createStore } from '../redux'
 
 function todosReducer(state = [], action) {
 	switch (action.type) {
