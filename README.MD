@@ -1,3 +1,7 @@
+##DEPRECATED
+
+Redux now has built in typings, please use those directly.
+
 #Typings-Redux
 
 This is typings for quite possibly the best flux implementation [redux](https://github.com/rackt/redux).
