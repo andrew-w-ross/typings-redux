@@ -2,5 +2,6 @@
 	"name": "redux",
 	"ambient": false,
 	"author": "Andrew Ross",
-	"main": "redux.d.ts"
+	"main": "redux.d.ts",
+	"postmessage": "this is deprecated. Redux now has built in typings, please use those directly"
 }
